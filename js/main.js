@@ -9,14 +9,9 @@ import { setupRenderer } from '../js/helpers/RendererHelper.js'
 const startingModelPath = '../models/Scene.glb'
 const curvePathJSON = '../models/curvePath.json'
 
-// set up your canvas here
-const canvas = document.createElement('canvas');
-document.body.appendChild(canvas);
+setupScene();
 
-// pass any necessary data to the setupScene function
-setupScene(canvas);
-
-async function setupScene(canvas) {
+async function setupScene() {
 
 	//Scene is container for objects, cameras, and lights
 	const scene = new THREE.Scene();
