@@ -6,7 +6,7 @@ export function setupRenderer() {
 	let renderer = new THREE.WebGLRenderer({
 
 	//Defines the canvas component in the DOM that will be used
-	canvas: document.querySelector('#background'),
+	canvas: document.querySelector('#spline-path-canvas'),
 		antialias: true,
 	});
 
