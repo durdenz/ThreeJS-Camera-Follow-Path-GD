@@ -1,4 +1,7 @@
+import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+let mixer;
 
 export const LoadGLTFByPath = (scene, startingModelPath) => {
     return new Promise((resolve, reject) => {
@@ -27,9 +30,26 @@ export const LoadGLBByPath = (scene, startingModelPath) => {
 
       scene.add(glb.scene);
 
+      // 062225 - G4 Beginning of Changes for Animation
+      mixer = new THREE.AnimationMixer(glb.scene);
+      const clips = glb.animations;
+
+      // Play all animations at the same time
+      clips.forEach(function(clip) {
+          const action = mixer.clipAction(clip);
+          action.play();
+      });
+      // 062225 - G4 End of Changes for Animation
+
       resolve();
-    }, undefined, (error) => {
+    }, () => {console.log(`Resolved`)}, (error) => {
       reject(error);
     });
   });
 };
+
+// 062225 - G4 Beginning of Changes for Animation
+export const getMixer = () => {
+  return(mixer);
+};
+// 062225 - G4 End of Changes for Animation
