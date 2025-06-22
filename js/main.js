@@ -6,8 +6,10 @@ import { loadCurveFromJSON } from '../js/curveTools/CurveMethods.js'
 import { setupRenderer } from '../js/helpers/RendererHelper.js'
 
 // const startingModelPath = './src/models/scene.gltf'
-const startingModelPath = '../models/Scene.glb'
-const curvePathJSON = '../models/curvePath.json'
+// const startingModelPath = '../models/Scene.glb'
+// const curvePathJSON = '../models/curvePath.json'
+const startingModelPath = '../models/3DScene_TEST1.glb'
+const curvePathJSON = '../models/SplinePath_TEST1.json'
 
 setupScene();
 
